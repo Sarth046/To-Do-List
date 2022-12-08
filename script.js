@@ -43,15 +43,14 @@ function addItem(e) {
 function removeItem(e) {
 	e.preventDefault();
 	if (e.target.classList.contains("delete")) {
-		if (confirm("Are you Sure?")) {
-			let li = e.target.parentNode;
-			items.removeChild(li);
-			document.getElementById("lblsuccess").innerHTML= "Item Removed";
-			document.getElementById("lblsuccess").style.display = "block";
-			setTimeout(function() {
-				document.getElementById("lblsuccess").style.display = "none";
-			}, 3000);
-		}
+		let li = e.target.parentNode;
+		items.removeChild(li);
+		document.getElementById("lblsuccess").innerHTML= "Item Removed";
+		document.getElementById("lblsuccess").style.display = "block";
+		setTimeout(function() {
+			document.getElementById("lblsuccess").style.display = "none";
+		}, 3000);
+		
 	}
 	if (e.target.classList.contains("edit")) {
 		document.getElementById("item").value =
